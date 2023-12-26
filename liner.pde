@@ -15,20 +15,20 @@ void draw(){
   for (int i=0; i<6; i++) {
   line(x1(t+i+10), y1(t+i),x2(t+i), y2(t+i));
   }
-  t++;
+  t+=0.3;
 }
   float x1(float t) {
-    return sin(t/50)*40 + sin(t/4)*10;
+    return sin(t/5)*250 + sin(t/4)*60;
   }
   
    float y1(float t) {
-    return cos(t/8)*80;
+    return cos(t/8)*200;
   }
   
   float x2(float t) {
-    return sin(t/5)*200 + sin(t)*16;
+    return sin(t/6)*200 + sin(t)*10;
   }
   
    float y2(float t) {
-    return cos(t/40)*230+cos(t/6)*3;
+    return cos(t/40)*200-cos(t/60)*30;
   }
