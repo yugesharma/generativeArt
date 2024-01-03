@@ -1,24 +1,31 @@
 float t;
 int count=0;
-int colorIndex=1;
-boolean changeColor=true;
-int [] colors={#9e0142, #d53e4f, #f46d43, #fdae61, #FDDA0D, #e6f598, #abdda4, #66c2a5, #3288bd, #5e4fa2};
+int colorIndex=0;
+boolean changeColor=false;
+int [] colors={#f8b48f, #f4874c, #f3702a, #ec5a0d, #ca4d0b, #a84009, #ca4d0b, #ec5a0d, #f3702a, #f4874c };
 void setup() {
   background(20);
   size(500, 500);
 }
 
 void draw(){
-  background(#F7F7F5);
-  strokeWeight(1);
+ 
+  println(colorIndex);
+  background(#2a2a2a);
+  strokeWeight(3);
   translate(width/2, height/2);
   if (count%50==0) {
      changeColor=!changeColor;
 }
   if (changeColor) {
-    colorIndex=int(random(0, 10));
+    colorIndex+=1;
+    changeColor=!changeColor;
+  } 
+  
+   if (colorIndex==10) {
+    colorIndex=0;
   }
-  println(colorIndex);
+  
   stroke(colors[colorIndex]);
   for (int i=0; i<6; i++) {
   line(x1(t+i),y1(t+i),x2(t+i),y2(t+i));
@@ -28,6 +35,8 @@ void draw(){
   
   count+=1;
   t+=0.2;
+  
+  
 }
   float x1(float t) {
     return sin(t/5)*250 + sin(t/4)*60;
