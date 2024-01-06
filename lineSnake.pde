@@ -1,8 +1,8 @@
-int x = 10;      
-int y = 480;    
-int step = 10;  
+float x = 10;      
+float y = 480;    
+int step = 1;  
 int dir = 1;    
-int stepUp=5;
+int stepUp=2;
 void setup() {
   
   size(500, 500);
@@ -12,28 +12,28 @@ void setup() {
 
 void draw() {
 
-  line(x, y, x + 20, y);
+  line(x, y, x + dir, y);
   x += dir * 2;
 
-  if (x > 490) {
-    x = 490;
+  if (x > width*0.9) {
+    x = width*0.9;
     if (stepUp < 10) {
       y -= step;
       stepUp++;
     } else {
       dir = -1;
-      stepUp = 0;  
+      stepUp = 2;  
     }
   }
 
-  if (x < 10) {
-    x = 10;
+  if (x < width*0.1) {
+    x = width*0.1;
     if (stepUp < 10) {
     y -= step;
     stepUp++;
     }else {
       dir = 1;
-      stepUp=0;
+      stepUp=2;
   }
 
   if (y < 0) {
