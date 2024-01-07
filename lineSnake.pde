@@ -12,11 +12,10 @@ void setup() {
 
 void draw() {
 
-  line(x, y, x + dir, y);
   x += dir * 2;
 
-  if (x%5==0){
-    line(x,y, x+6, y-6);
+  if (x%10==0){
+    triangle(x,y, x+10, y-10, x-10, y-10);
   }
 
   if (x > width*0.9) {
