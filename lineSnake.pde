@@ -1,6 +1,6 @@
 float x = 10;      
 float y = 480;    
-int step = 1;  
+int step = 3;  
 int dir = 1;    
 int stepUp=2;
 void setup() {
@@ -14,6 +14,10 @@ void draw() {
 
   line(x, y, x + dir, y);
   x += dir * 2;
+
+  if (x%5==0){
+    line(x,y, x+6, y-6);
+  }
 
   if (x > width*0.9) {
     x = width*0.9;
